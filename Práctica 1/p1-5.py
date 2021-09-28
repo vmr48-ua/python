@@ -9,10 +9,10 @@ while num != 0:
     primo = 1
 
     # Detectar si el número i es primo
-    while j > 1:
+    for j in range((j**0.5)+1,1,-1):
         if i % j == 0:
             primo = 0
-        j = j-1
+            break
 
     # Detectar si el número primo acaba en 7
     if primo and (i-7 == 0 or (i-7) % 10 == 0):

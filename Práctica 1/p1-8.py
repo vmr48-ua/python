@@ -9,10 +9,9 @@ while j > 0:
     while aux-j > 0 and aux > 0:
         print(' ', end='')
         aux -= 1 
-    while i > 0:
+    for i in range (i,0,-1):
         print(i, end='')
-        i -= 1
-    i += 2 # Me quita el 0 y el 1 repetidos
+    i += 1 # Me quita el 0 y el 1 repetidos
     while i < (j+1): # llega hasta num
         print(i, end='')
         i += 1

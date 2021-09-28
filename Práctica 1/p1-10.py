@@ -18,5 +18,5 @@ while diff > 0.000001:
         diff = 1
     #print('diff: {}, total: {}, anterior: {}, fact: {}, sq: {}, div: {}'.format(diff,total,anterior,fact,sq,div))
 print(round(total,6))
-print(round(math.e**num,6))
-print((round(math.e**num,6)-round(total,6)))
+#print(round(math.e**num,6))
+#print((round(math.e**num,6)-round(total,6)))
