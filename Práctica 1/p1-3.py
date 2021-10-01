@@ -1,6 +1,6 @@
-
 op = ''
 a = float(input())
+
 while op != '=':
     op = input()
     if op != '=':
