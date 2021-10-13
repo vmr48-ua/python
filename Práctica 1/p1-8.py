@@ -1,9 +1,9 @@
 num = int(input())
 # i = Contador para líneas
-j = num # Contador para columnas
+# j Contador para columnas
 
 # Triángulo superior
-while j > 0:
+for j in range (num,0,-1):
     i = j
     aux = num # Auxiliar para los espacios
     while aux-j > 0 and aux > 0:
@@ -16,7 +16,6 @@ while j > 0:
         print(i, end='')
         i += 1
     print('') # cambio de línea entre líneas       
-    j -= 1
 
 aux = num
 # Triángulo inferior

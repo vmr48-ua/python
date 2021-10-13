@@ -9,4 +9,5 @@ while num != 0:
         i += 1
         mult *= num
 
-print(round(mult**(1/(i)),3))
+if i > 0:
+    print(round(mult**(1/(i)),3))

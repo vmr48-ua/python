@@ -15,7 +15,7 @@ while num != 0:
             break
 
     # Detectar si el número primo acaba en 7
-    if primo and (i-7 == 0 or (i-7) % 10 == 0):
+    if primo and ((i-7) % 10 == 0):
         ends_in_seven = 1
 
     # Imprime
