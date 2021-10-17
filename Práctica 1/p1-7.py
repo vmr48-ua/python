@@ -1,4 +1,3 @@
-import math
 num = 1
 i = 0
 mult = 1

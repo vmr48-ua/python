@@ -4,7 +4,6 @@ i = 1
 while num != 0: 
     # Asignaciones
     ends_in_seven = 0
-    aux = 0
     j = i-1
     primo = 1
 
@@ -22,8 +21,7 @@ while num != 0:
     if primo and num != 1 and i != 1 and not ends_in_seven:
         print('{}, '.format(i), end='')
         num -= 1
-        aux = 1
-    if primo and num == 1 and not aux and not ends_in_seven:
+    elif primo and num == 1 and not ends_in_seven:
         print('{}.'.format(i))
         num -= 1
 

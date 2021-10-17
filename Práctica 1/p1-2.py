@@ -9,6 +9,3 @@ if num > 0:
         print(num, 'es un número perfecto')
     else:
         print(num, 'no es un número perfecto')
-
-else:
-    print('El número es menor que 0')

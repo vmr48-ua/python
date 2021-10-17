@@ -1,22 +1,31 @@
-import math
-num = float(input())
+""" 
+# Esta es la primera forma que se me ocurrió de hacerlo, pero tiene el problema
+# de que para x muy grandes, hay overflow, por lo que pensé la solución final
 
-i = 0
-total = 1
-diff = 1
-fact = 1
+x = float(input())
 
-while diff > 0.000001:
-    i += 1
-    sq = num**i
-    fact = math.factorial(i)
+n = -1
+total = 0
+div = 1
+
+while div > 10**(-6):
+    fact = 1
+    n += 1
+    sq = x**n
+    for j in range (n, 0, -1):
+        fact *= j
     div = sq/fact
-    anterior = total
-    total = total + div
-    diff = abs(total-anterior)
-    if anterior == 0:
-        diff = 1
-    #print('diff: {}, total: {}, anterior: {}, fact: {}, sq: {}, div: {}'.format(diff,total,anterior,fact,sq,div))
+    total += div
+print(round(total,6)) """
+
+x = float(input())
+
+n = 0
+total = 1
+div = 1
+
+while abs(div) > 10**(-6):
+    n += 1
+    div *= x/n
+    total += div
 print(round(total,6))
-#print(round(math.e**num,6))
-#print((round(math.e**num,6)-round(total,6)))
