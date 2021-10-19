@@ -1,30 +1,29 @@
 def leer():
     v = list(map(int,input().split()))
-    w = list(map(int,input().split()))
-    return v, w
+    return v
 
-def compare(v,w):
-    if len(v) == len(w):
-        equal = 0
+def compare(n,v,w):
+    equal = 0
+    ans = 2 # debug vaule
+    sameLen = 1
+    if len(v) == len(w) == n:
+        sameLen = 0
+    if sameLen == 0:
         for i in range(len(v)):
             if v[i] > w[i]:
                 ans = 1
                 equal = 1
                 break
-            if w[i] > v[i]:
+            elif v[i] < w[i]:
                 ans = -1
                 equal = 1
                 break
         if equal == 0:
             ans = 0
-    elif len(v) > len(w):
-        ans = 1
-    else:
-        ans = -1
     return ans
 
-input()
-v = list(map(int,input().split()))
-w = list(map(int,input().split()))
+n = int(input())
 
-print(compare(v, w))
+output = compare(n,leer(),leer())
+if output != 2:
+    print(output)
