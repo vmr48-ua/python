@@ -9,13 +9,9 @@ def check(v,p,l):
 
 def create(v,p,l):
     if(check(v,p,l) == 0):
-        j = 0
         w = []
-        for i in range(p,len(v)):
+        for i in range(p,p+l):
             w.append(v[i])
-            j += 1
-        while len(w) > l:
-            w.pop()
         escribir(w)
     else:
         print('error')

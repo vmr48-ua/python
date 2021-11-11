@@ -1,6 +1,6 @@
 def leerMatriz(n):
     m = []
-    for i in range(n):
+    for _ in range(n):
         m.append(leerVector())
     return m
 
@@ -30,9 +30,9 @@ def mult(A,B):
     m = len(B[0]) #columnas
     C = []
 
-    for a in range(n):  #crea una matriz resultado c de nxm dimensiones llena de 0
+    for _ in range(n):  #crea una matriz resultado c de nxm dimensiones llena de 0
         v = []
-        for b in range(m):
+        for _ in range(m):
             v.append(0)
         C.append(v)
 
