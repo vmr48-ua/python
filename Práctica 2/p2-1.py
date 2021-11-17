@@ -29,7 +29,7 @@ def media(v):           # Calcula la media de las componentes de un vector
     suma = 0                   # inicialización
     tamaño = 1                 # el mínimo tamaño tiene que ser 1 y no 0, ver return
 
-    if len(v) > 0:        # si el vector no está vacío, tamaño es el tamaño del vector
+    if len(v) > 0:             # si el vector no está vacío, tamaño es el tamaño del vector
         tamaño = len(v)
     for num in v:
         suma += num            # suma todas las componentes
@@ -38,17 +38,17 @@ def media(v):           # Calcula la media de las componentes de un vector
 
 def desviación(v):      # Calcula la desviación típica muestral de un vector
     suma = 0                        # inicialización
-    med = media(v)              # cálculo de la media
+    med = media(v)                  # cálculo de la media
     div = 1                         # empieza por 1 para no dividir por 0
     for i in range (len(v)):    
-        suma += (v[i] - med)**2 # cálculo del numerador
+        suma += (v[i] - med)**2     # cálculo del numerador
     if len(v)-1 > 0:
-        div = (len(v)-1)        # cálculo del denominador
+        div = (len(v)-1)            # cálculo del denominador
     return (suma/div)**0.5          # división y raíz
 
 def moda(v):            # Calcula la moda de un vector
     mod = 0             # el valor por defecto es 0
-    if len(v) > 0:  # devuelve el valor que más se repite en mod
+    if len(v) > 0:      # devuelve el valor que más se repite en mod
         mod = max(v, key = v.count)
     return mod
 
