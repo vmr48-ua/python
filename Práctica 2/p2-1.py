@@ -22,8 +22,7 @@ stdout=2.4
 """
 
 def leer():             # Lee un vector números separados por espacios del teclado 
-    v = list(map(int,input().split()))
-    return v
+    return list(map(int,input().split()))
 
 def media(v):           # Calcula la media de las componentes de un vector
     suma = 0                   # inicialización
@@ -46,11 +45,14 @@ def desviación(v):      # Calcula la desviación típica muestral de un vector
         div = (len(v)-1)            # cálculo del denominador
     return (suma/div)**0.5          # división y raíz
 
-def moda(v):            # Calcula la moda de un vector
-    mod = 0             # el valor por defecto es 0
-    if len(v) > 0:      # devuelve el valor que más se repite en mod
-        mod = max(v, key = v.count)
-    return mod
+def moda(v):            # Calcula la moda típica muestral de un vector
+    m = v[0]                        # Asumo que la moda es el primer valor
+    count = v.count(m)              # Guardo cuantas veces se repite la moda
+    for i in range(1,len(v)):       # Empieza en 1 para saltarse el que ya he supuesto ([0])
+        if v.count(v[i]) > count:   # Si el valor nuevo se repite más veces que el anterior
+            m = v[i]                # Actualizo a el nuevo valor de la moda
+            count = v.count(v[i])   # Actualizo
+    return m
 
 entrada = leer()
 print(round(media(entrada),5))

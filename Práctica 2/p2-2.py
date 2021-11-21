@@ -26,8 +26,7 @@ stdout=-1
 """
 
 def leer():             # Lee un vector números separados por espacios del teclado 
-    v = list(map(int,input().split()))
-    return v
+    return list(map(int,input().split()))
 
 def compare(n,v,w):     # Compara los vectores de tamaño n y devuelve 1 0 ó -1 en función de cuál es mayor
     equal = 0                   # inicialización
@@ -53,4 +52,4 @@ n = int(input())
 
 output = compare(n,leer(),leer())
 if output != 2:         # Imprime solo si la comparación tiene sentido (debug línea 34)
-    print(output)
+    print(output)       # no imprime si n != len(v) o n != len(w) o len(v) != len(w)

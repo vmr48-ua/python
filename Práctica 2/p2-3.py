@@ -25,10 +25,22 @@ stdout=1 2 3 4 5 7 8
 def leer():             # Lee un vector números separados por espacios del teclado 
     return list(map(int,input().split()))
 
+def minimo(v):          # Lee un vector y devuelve el mínimo (podría usarse la función min())
+    a = v[0]                    # Presupongo que v[0] es el min
+    for i in range(1,len(v)):   # Desde el 1 porque el 1 ya está metido
+        if v[i] < a:            # Si  hay uno menor me lo guardo
+            a = v[i]
+    return a                    # devuelvo el minimo
+
 def ordenar(v):         # Ordena un vector de menor a mayor por el método de intercambio
-    for i in range (len(v)-1):          
-        j = v.index(min(v[i:len(v)]))   # j contencrá la posición del mínimo de v a partir de la posición i
-        v[i],v[j] = v[j],v[i]           # intercambio el contenido de la posición i con j
+    for i in range(len(v)):         # Bucle para todo el vector
+        peq = v[i]                  # Asumo que el más pequeño es el primero
+        aux = i                     # Guardo la posición del más pequeño
+        for j in range(i,len(v)):   # Busca el más pequeño desde la posición i
+            if v[j] < peq:          # si hay uno más pequeño actualiza
+                peq = v[j]
+                aux = j
+        v[aux], v[i] = v[i], v[aux] # intercambia el más pequeño con el antiguo
     return v
 
 def escribir(v):        # Imprime un vector separado por espacios
@@ -37,15 +49,16 @@ def escribir(v):        # Imprime un vector separado por espacios
             print(i,end = ' ')  # Imprime con espacios al final cada posición
     print(v[len(v)-1])          # Imprime la última posición y un cambio de línea
 
+escribir(ordenar(leer()))
 # Versiones anteriores de la función "ordenar"
 # comentar la función escribir y descomentar para probar
-# (usan de alguna forma un vector w copia de v)
+# (son más o menos funcionales pero usan de alguna forma un vector w copia de v)
 
 """ def ordenar(v):
     w = v.copy()
     for i in range(len(v)):
         for j in range(len(v)):     
-            if v[j] == min(w):
+            if v[j] == minimo(w):
                 posiciónMin = j
 
         primero = v[i]
@@ -53,7 +66,7 @@ def escribir(v):        # Imprime un vector separado por espacios
         v[posiciónMin] = primero
 
         for k in range(len(w)):
-            if w[k] == min(w):
+            if w[k] == minimo(w):
                 posiciónW = k
         w.pop(posiciónW)
     return v """
@@ -64,10 +77,14 @@ def escribir(v):        # Imprime un vector separado por espacios
         for _ in range(i):
             w.pop()
         for n in range(len(v)):
-            if v[n] == min(w):
+            if v[n] == minimo(w):
                 j = n
                 break
         v[i],v[j] = v[j],v[i]
     return v """
 
-escribir(ordenar(leer()))
+""" def ordenar(v):         # Ordena un vector de menor a mayor por el método de intercambio
+    for i in range (len(v)-1):          
+        j = v.index(minimo(v[i:len(v)]))# j contencrá la posición del mínimo de v a partir de la posición i
+        v[i],v[j] = v[j],v[i]           # intercambio el contenido de la posición i con j
+    return v """
