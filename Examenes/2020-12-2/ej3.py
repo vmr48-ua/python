@@ -13,13 +13,10 @@ def sumaSubMatrices(M):
         ans.append(suma(M,i))
     return ans
 
-def leeFila():
-    return [int(x) for x in input().split()]
-
 def leeMatriz(n):
     M = []
     for _ in range(n):
-        M.append(leeFila())
+        M.append([int(x) for x in input().split()])
     return M
 
 def imprime(a):
