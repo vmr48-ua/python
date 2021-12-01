@@ -6,7 +6,7 @@ def fila(n,lim): # Calcula cada fila de la matriz
     for _ in range(lim+1):      # hasta el límite (columna)
         for _ in range(len(v)): # Vacío v
             v.pop()
-        for i in range(count):  # Añado a v el 'a' correspondiente
+        for i in range(cont):  # Añado a v el 'a' correspondiente
             v.append(a)
             a+=1                # actualizo a
         for _ in range(cont,n): # relleno el resto de v con 0
