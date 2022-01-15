@@ -1,5 +1,16 @@
 from sys import argv
 
+
+##############
+"""
+Este ejercicio no está bien al 100% porque calera dijo en el examen
+que en el fichero podrían haber intros al final de la matriz, cosa que 
+no escuché y el programa no hace. Debe no fallar aunque haya un cambio
+de línea (o múltiples) al final de la matriz.
+"""
+##############
+
+
 #Crea una matriz dispersa dada una en formato python
 def aDispersa(M):
     A,fila = [],[]
