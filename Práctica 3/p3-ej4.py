@@ -23,7 +23,7 @@ plt.xlim(-10,10)
 axs[0].title.set_text('x, y')
 axs[0].plot(t,y[:,0])
 
-plt.xlim(0,25) # con (0,25) de límite quedaría mejor
+plt.xlim(-10,10) # con (0,25) de límite quedaría mejor (por ejemplo)
 axs[1].title.set_text('y, y\'')
 axs[1].plot(y[:,0],y[:,1])
 

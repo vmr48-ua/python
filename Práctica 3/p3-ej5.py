@@ -66,6 +66,6 @@ def funcion(x):
 integral = quad(funcion, 0, np.inf)[0]
 error =    quad(funcion, 0, np.inf)[1]
 
-#print(quad(funcion, 0, np.inf))
-cifrasSignificativas(integral,error)
-print(' u')
+#print(quad(funcion, 0, np.inf)[0])
+cifrasSignificativas(integral,error)#Devuelve el valor de la integral acorde a su error ajustado
+print(' u^2')

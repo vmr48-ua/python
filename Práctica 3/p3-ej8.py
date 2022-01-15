@@ -32,7 +32,7 @@ class Conjunto(object):
 
     def difSimetrica(self, A):
         final = []
-        aux = self.elementos + A.elementos
+        aux = self.union(A).elementos
         for elem in aux:
             if aux.count(elem) == 1:
                 final.append(elem)
@@ -44,7 +44,7 @@ class Conjunto(object):
         # llamada a la función print
         cad = '{'
         for x in self.elementos[:-1]:
-            cad += str(x) + '.'
+            cad += str(x) + ', '
         return cad + str(self.elementos[-1]) + '}'
 
 A = Conjunto({1,2,3,4})
