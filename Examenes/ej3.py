@@ -15,7 +15,7 @@ print(Catalan(15))
 # si conseguimos almacenar los valores previamente calculados en una lista,
 # nos ahorraremos tiempo de ejecución
 
-def Catalan(n,cat):
+def Catalan(n,cat=[]):
     if n <= 1:
         return 1
     else:
@@ -29,4 +29,4 @@ def Catalan(n,cat):
                 cat.append(Catalan(i,cat))
         return ans
     
-print(Catalan(50,[]))
+print(Catalan(50))
