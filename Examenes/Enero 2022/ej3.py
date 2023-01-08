@@ -16,7 +16,6 @@ def escribir():
     resultados = []
     for x in a:
         resultados.append(quad(f,x,inf,args=x)[0])
-    print(quad(f,0.1,inf,args=x))
 
     #Escribo todos los resultados en el archivo en el formato estipulado
     for i in range(len(resultados)-1):
