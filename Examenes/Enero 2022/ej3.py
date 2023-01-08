@@ -14,42 +14,38 @@ def escribir():
     a = linspace(0.1,2,100)
     #resultados contendrá 100 resultados de la integral en el rango estipulado
     resultados = []
-    for i in a:
-        resultados.append(quad(f,i,inf,args=i)[0])
+    for x in a:
+        resultados.append(quad(f,x,inf,args=x)[0])
+    print(quad(f,0.1,inf,args=x))
 
     #Escribo todos los resultados en el archivo en el formato estipulado
     for i in range(len(resultados)-1):
-        file.write('Ie(x{}) '.format(i+1) + str(resultados[i]) + '\n')
-    file.write('Ie(x100) ' + str(resultados[99]))
+        file.write(str(a[i]) + ' ' + str(resultados[i]) + '\n')
+    file.write(str(a[99]) + ' ' + str(resultados[99]))
 
     file.close()
 
 #Grafica los resultados que lee de un archivo de datos
 def graficar():
     archivo = open("datos.txt","r")
-    datos = []
+    y = []
+    x = []
     grafica = []
     a = linspace(0.1,2,100)
     
     #Separo el texto de los datos y me guardo los datos en una lista
     for fila in archivo:
         fila = [str(x) for x in fila.split()]
-        fila.pop(0)
-        datos.append(str(fila))
-    
-    #Guardo en la lista grafica los datos con el formato correcto
-    for linea in datos:
-        dato = ''
-        for caracter in linea:
-            if caracter != '[' and caracter != ']' and caracter != '\'':
-                dato += caracter
-        grafica.append(float(dato))
+        x.append(float(fila[0]))
+        y.append(float(fila[1]))
 
     #Grafico los datos y los guardo en la foto correspondiente
     
-    plt.plot(a,grafica)
+    plt.plot(x,y)
     plt.savefig("ej3.png")
     archivo.close()
 
 escribir()
 graficar()
+
+#https://www.wolframalpha.com/input?i2d=true&i=-Ei%5C%2840%29-x%5C%2841%29+from+0.1+to+2
